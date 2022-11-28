@@ -10,5 +10,9 @@
     "chat-application"
   ],
   "author": "vineet-singh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.js": "^0.1.4"
+  }
 }
