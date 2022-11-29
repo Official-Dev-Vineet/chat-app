@@ -1,5 +1,5 @@
-let messages = document.querySelector('.messages');
-let inputMsg = document.querySelector('#msg');
+// let messages = document.querySelector('.messages')
+let inputMsg = document.querySelector('#msg')
 let status = document.querySelector('.status')
 
 inputMsg.addEventListener('keyup', (e) => {
