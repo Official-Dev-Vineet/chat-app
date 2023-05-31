@@ -12,6 +12,9 @@ app.use(express.static(__dirname + '/public'))
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
+app.get('/GetProduct', (req, res) => {
+    res.json({name:"vineet"})
+})
 const io=require('socket.io')(http)
 
 io.on("connection",(socket)=>{
