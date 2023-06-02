@@ -1,46 +1,66 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WhatsChat Messenger</title>
-    <link rel="stylesheet" href="/style.css" />
-    <link
-      rel="icon"
-      href="https://www.thegreatapps.com/application/upload/Apps/2018/01/locker-for-whats-chat-app-9.png"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="wrapper">
-        <div class="message_area">
-          <div class="message_header">
-            <div>
-              <img
-                class="chat-logo"
-                src="https://www.thegreatapps.com/application/upload/Apps/2018/01/locker-for-whats-chat-app-9.png"
-                alt="chat-logo"
-              />
-              <h3>WhatsChat</h3>
-            </div>
-            <div class="dynamic">
-              <span class="status"> </span>
-            </div>
-          </div>
-          <div class="messages"></div>
-          <div class="input">
-            <textarea
-              id="msg"
-              cols="30"
-              rows="1"
-              placeholder="type message..."
-            ></textarea>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsChat Messenger</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon"
+    href="https://www.thegreatapps.com/application/upload/Apps/2018/01/locker-for-whats-chat-app-9.png" />
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <div class="userLogo">
+        V
+      </div>
+      <div class="userStatus">
+        <div class="userIcon">
+          <div class="head"></div>
+          <div class="body"></div>
+        </div>
+      </div>
+      <div class="setting">
+        <div class="setingIcon">
+          &#9881;
+        </div>
+        <div class="settingMenu">
+          <div class="bgSelect">
+            <p>
+              Chat background:
+            </p>
+            <select id="chatBg">
+          
+            </select>
           </div>
         </div>
       </div>
+    </nav>
+    <div class="wrapper">
+      <div class="message_area">
+        <div class="message_header">
+          <div>
+            <img class="chat-logo"
+              src="https://www.thegreatapps.com/application/upload/Apps/2018/01/locker-for-whats-chat-app-9.png"
+              alt="chat-logo" />
+            <h3>WhatsChat</h3>
+          </div>
+          <div class="dynamic">
+            <span class="status"> </span>
+          </div>
+        </div>
+        <div class="messages"></div>
+        <div class="input">
+          <textarea id="msg" cols="30" rows="1" placeholder="type message..."></textarea>
+        </div>
+      </div>
     </div>
-    <script src=""></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="client.js"></script>
-  </body>
+  </div>
+  <script src=""></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+
 </html>

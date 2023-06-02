@@ -6,20 +6,28 @@
   transition: all 300ms ease;
 }
 body {
-  background-image: linear-gradient(15deg, #3ab, transparent, #2ab);
+  background-color:rgb(197, 236, 235);
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
 }
 .container {
   display: grid;
   place-items: center;
-  width: 600px;
-  margin: auto;
-  max-width: 90%;
-  height: 100%;
+  grid-template-rows:3rem 1fr;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding:1rem 2rem;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 5px -6px rgba(14, 6, 6, 0.4);
+  margin-bottom: 1.5rem;
 }
 .wrapper {
   position: relative;
+  max-width: 600px;
   width: 100%;
   box-shadow: 0 0 30px rgba(14, 6, 6, 0.4);
   border-radius: 0.5em;
@@ -29,8 +37,11 @@ body {
   overflow: hidden;
   width: 100%;
   background-color: rgb(21, 24, 53);
-  height: 500px;
+  min-height: 500px;
   color: #fff;
+  background-image: url(images/chat-bg.avif);
+  background-size: 100%;
+  background-position: center;
 }
 
 /* message_header */
@@ -54,11 +65,11 @@ img.chat-logo {
 .message_header h3 {
   font-weight: 300;
 }
-.message_header .dynamic{
-    margin-left: auto;
-    padding:1em;
-    text-transform: capitalize;
-    font-variant: small-caps;
+.message_header .dynamic {
+  margin-left: auto;
+  padding: 1em;
+  text-transform: capitalize;
+  font-variant: small-caps;
 }
 /* message  */
 .messages {
@@ -71,11 +82,11 @@ img.chat-logo {
   border-radius: 1em;
   padding: 0.3em;
 }
-.msg h4 {
-  font-size: 14px;
+.msg h4.username {
+  font-size: 10px;
   font-weight: 300;
   text-transform: capitalize;
-  font-variant: small-caps;
+  /* font-variant: small-caps; */
 }
 .msg p {
   margin-left: 1em;
@@ -99,11 +110,11 @@ img.chat-logo {
   display: block;
 }
 .incoming-msg {
-  background-color: rgba(53, 201, 220, 0.459);
+  background-color: rgba(0, 110, 124, 0.459);
 }
 .outgoing-msg {
   margin-left: auto;
-  background-color: rgba(51, 187, 92, 0.491);
+  background-color: rgba(4, 91, 30, 0.491);
 }
 
 /* input  */
@@ -121,10 +132,11 @@ img.chat-logo {
   width: 100%;
   height: 100%;
   padding: 1em;
-  font-family: cursive;
+  font-family: inherit;
+  color: #fff;
   outline: none;
   border: none;
-  background-color: rgba(255, 255, 255, 0.559);
+  background-color: rgba(69, 63, 63, 0.313);
   backdrop-filter: blur(5px);
   resize: none;
 }
@@ -136,29 +148,29 @@ img.chat-logo {
 
 /* js classes */
 
-.msg-send{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #1a7406;
-    color: #fff;
-    padding: 0.5em;
-    border-radius: 0.5em;
-    text-transform: capitalize;
-    font-variant: small-caps;
+.msg-send {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1a7406;
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  text-transform: capitalize;
+  font-variant: small-caps;
 }
 
-@media screen and (max-width:500px) {
-    .messages p{
-        font-size:12px;
-    }
-    .messages .time{
-        font-size: 10px;
-    }
-    .input{
-        height: 40px;
-    }
-    .input textarea{
-        padding: 0.8em;
-    }
+@media screen and (max-width: 500px) {
+  .messages p {
+    font-size: 12px;
+  }
+  .messages .time {
+    font-size: 10px;
+  }
+  .input {
+    height: 40px;
+  }
+  .input textarea {
+    padding: 0.8em;
+  }
 }
