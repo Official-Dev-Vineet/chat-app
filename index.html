@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WhatsChat Messenger</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="icon"
     href="https://www.thegreatapps.com/application/upload/Apps/2018/01/locker-for-whats-chat-app-9.png" />
 </head>
@@ -18,22 +18,35 @@
       </div>
       <div class="userStatus">
         <div class="userIcon">
-          <div class="head"></div>
+          <div class="head">
+            <div class="mouth"></div>
+          </div>
           <div class="body"></div>
         </div>
       </div>
       <div class="setting">
-        <div class="setingIcon">
-          &#9881;
+        <div class="settingIcon">
+          <span> &#9881;</span>
         </div>
         <div class="settingMenu">
-          <div class="bgSelect">
+          <div class="bgSelect border-bottom">
             <p>
               Chat background:
             </p>
             <select id="chatBg">
-          
+              <option value="images/chat-bg.avif">Select Default</option>
             </select>
+          </div>
+          <div class="bodyBgChanger border-bottom">
+            <span> BG SlideShow </span>
+            <button value="off" id="BodyBGChange">
+              off
+            </button>
+          </div>
+          <div class="sliderTimer border-bottom">
+            <span> Slide Timer </span>
+            <input type="range" id="timerRange" min="0.5" max="5.5" disabled />
+            <span class="timerValue">Default : 30s</span>
           </div>
         </div>
       </div>
