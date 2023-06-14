@@ -27,15 +27,16 @@ setting.querySelector(".settingIcon").addEventListener("click", () => {
 
 //input handler
 inputMsg.addEventListener("keyup", (e) => {
-  if (e.key == "Enter") {
-    sendMessage(e.target.value);
+  if (e.key === "Enter") {
+    sendMessage(e.target.value.trim());
     e.target.value = "";
     let msg = document.createElement("div");
     msg.classList.add("msg-send");
     msg.innerText = "message sent.";
     document.body.appendChild(msg);
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       document.body.removeChild(msg);
+      return clearTimeout(timer);
     }, 1500);
   } else {
     msgStatus.innerText = "typing...";
@@ -75,9 +76,8 @@ setChatBg();
 function sendMessage(msg) {
   let message = {
     username: user,
-    message: msg.trim(),
+    message: msg,
   };
-
   // append message
   appendMessage(message, "outgoing-msg");
   // send to server
@@ -87,11 +87,12 @@ function appendMessage(msg, type) {
   let mainDiv = document.createElement("div");
   let className = type;
   mainDiv.classList.add(className, "msg");
-  let markup = `
-    <h4 class='username'>${msg.username}</h4>
-    <p>${msg.message}</p>
-    `;
-  mainDiv.innerHTML = markup;
+  let user = document.createElement("h4");
+  let userMsg = document.createElement("p");
+  user.textContent = msg.username;
+  userMsg.textContent = msg.message;
+  mainDiv.appendChild(user);
+  mainDiv.appendChild(userMsg);
   messages.appendChild(mainDiv);
   messages.scrollTop = messages.scrollHeight;
 }
@@ -104,7 +105,6 @@ function bodyColorChanger(delay = 30000) {
       Math.floor(Math.random() * 0xffffff)
         .toString(16)
         .padEnd(6, "a");
-    console.log(delay);
   }, delay);
 }
 // slideCheckBox handler
@@ -125,7 +125,6 @@ body.querySelector("#BodyBGChange").addEventListener("click", async (e) => {
     }
   }
 });
-
 // slide timer set by user
 timerRange.addEventListener("change", async (e) => {
   timerValue.textContent = `Current : ${e.target.value * 10}s`;
@@ -137,6 +136,4 @@ timerRange.addEventListener("change", async (e) => {
 // receive msg
 socket.on("message", (msg) => {
   appendMessage(msg, "incoming-msg");
-  console.log(oldMsg);
 });
-console.clear();

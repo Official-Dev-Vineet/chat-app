@@ -29,6 +29,7 @@ nav {
   padding: 1rem 2rem;
   backdrop-filter: blur(5px);
   box-shadow: 0 5px 5px -6px rgba(14, 6, 6, 0.4);
+  z-index: 1;
 }
 .userLogo {
   color: rgb(21, 24, 53);
@@ -166,7 +167,7 @@ nav {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
   border-radius: 0.5rem;
   overflow: hidden;
-  z-index: -1;
+  margin-bottom: 1rem;
 }
 .message_area {
   width: 100%;
@@ -180,7 +181,7 @@ nav {
 }
 /* message_header */
 .message_header,
-.message_header div {
+.message_header > div {
   position: sticky;
   top: 0;
   user-select: none;
@@ -261,6 +262,8 @@ img.chat-logo {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+ 
 }
 .input textarea {
   width: 100%;
@@ -270,8 +273,7 @@ img.chat-logo {
   color: #fff;
   outline: none;
   border: none;
-  background-color: rgba(69, 63, 63, 0.313);
-  backdrop-filter: blur(5px);
+  background-color: rgba(61, 56, 56, 0.879);
   resize: none;
 }
 
