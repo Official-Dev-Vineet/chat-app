@@ -12,13 +12,14 @@ let rangeStatus = false;
 
 const socket = io(); // socket js file
 let user = localStorage.getItem("username");
-do {
-  if (user !== undefined) {
-  } else {
-    user = prompt("enter your name");
-    localStorage.setItem("username", user.trim());
-  }
-} while (!user);
+console.log(user)
+if (user !== null) {
+  alert(user);
+} else {
+  do {
+    user = prompt("enter username");
+  } while (!user);
+}
 
 // setting toggler
 setting.querySelector(".settingIcon").addEventListener("click", () => {

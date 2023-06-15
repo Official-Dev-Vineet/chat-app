@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple registration form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="form.css">
+    <link rel="icon"
+        href="https://www.thegreatapps.com/application/upload/Apps/2018/01/locker-for-whats-chat-app-9.png" />
+  </head>
+  <body>
+    <div class="main-block">
+      <h1>Registration</h1>
+      <form action="/" id="userRegistrationForm">
+        <hr>
+        <fieldset class="account-type">
+          <legend>Account type</legend>
+          <input type="radio" value="none" id="radioOne" name="account" checked/>
+          <label for="radioOne" class="radio">Default</label>
+          <input type="radio" value="none" id="radioTwo" name="account" />
+          <label for="radioTwo" class="radio">Private</label>
+        </fieldset>
+        <hr>
+        <fieldset disabled="disabled">
+          <legend>Personal information</legend>
+          <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
+        <input type="text" name="name" id="email" placeholder="Email" required/>
+        <label id="icon" for="name"><i class="fas fa-user"></i></label>
+        <input type="text" name="name" id="name" placeholder="Name" required/>
+        <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
+        <input type="password" name="name" id="password" placeholder="Password" required/>
+        </fieldset>
+        <hr>
+        <fieldset disabled="disabled" class="gender">
+          <legend>Gender</legend>
+          <input type="radio" value="none" id="male" name="gender" />
+          <label for="male" class="radio">Male</label>
+          <input type="radio" value="none" id="female" name="gender" />
+          <label for="female" class="radio">Female</label>
+        </fieldset>
+        <hr>
+        <div class="btn-block">
+          <p>By clicking Register, you agree on our <a href="/privacy">Privacy Policy</a>.</p>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="form.js" async ></script>
+  </body>
+</html>
